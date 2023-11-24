@@ -1,6 +1,7 @@
 package com.example.customer;
 
 import com.example.exception.DuplicateResourceException;
+import com.example.exception.RequestValidationException;
 import com.example.exception.ResourceNotFound;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -53,6 +54,37 @@ public class CustomerService {
                 customerDao.deleteCustomerById(customerId);
             } catch (Exception e) {
                 throw new RuntimeException("Could not delete customer: " + e.getMessage());
+            }
+        }
+    }
+
+    public void updateCustomer(Integer id, CustomerUpdateRequest customerUpdateRequest) {
+        Customer customer = getCustomer(id);
+
+        boolean changes = false;
+
+        if (customerUpdateRequest.name() != null && !customerUpdateRequest.name().equals(customer.getName())) {
+            customer.setName(customerUpdateRequest.name());
+            changes = true;
+        }
+
+        if (customerUpdateRequest.email() != null && !customerUpdateRequest.email().equals(customer.getEmail())) {
+            if (customerDao.existsCustomerWithEmail(customerUpdateRequest.email())) {
+                throw new DuplicateResourceException(
+                        "Email already taken"
+                );
+            }
+            customer.setEmail(customerUpdateRequest.email());
+            changes = true;
+        }
+
+        if (!changes) {
+            throw new RequestValidationException("No data changes found");
+        } else {
+            try {
+                customerDao.updateCustomer(customer);
+            } catch (Exception exception) {
+                throw new RuntimeException("Could not update customer: " + exception.getMessage());
             }
         }
     }
