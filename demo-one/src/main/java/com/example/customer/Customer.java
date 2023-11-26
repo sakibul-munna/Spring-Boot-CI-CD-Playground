@@ -3,30 +3,40 @@ package com.example.customer;
 import jakarta.persistence.*;
 
 @Entity
+@Table(
+        name = "customer",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "customer_email_unique",
+                        columnNames = "email"
+                )
+        }
+)
 public class Customer {
 
     @Id
     @SequenceGenerator(
-            name="customer_id_sequence",
-            sequenceName = "customer_id_sequence"
+            name = "customer_id_seq",
+            sequenceName = "customer_id_seq",
+            allocationSize= 1
     )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "customer_id_sequence"
-    )
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id_seq")
+    private Long id;
 
-    @Column( nullable = false )
+    @Column(nullable = false)
     private String name;
 
-    @Column( nullable = false )
+    @Column(nullable = false, unique = true)
     private String email;
 
-    public Integer getId() {
+    @Column(nullable = false)
+    private Integer age;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,10 +56,19 @@ public class Customer {
         this.email = email;
     }
 
-    public Customer(Integer id, String name, String email) {
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Customer(Long id, String name, String email, Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.age = age;
     }
 
     public Customer() {
@@ -62,6 +81,7 @@ public class Customer {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", age='" + age + '\'' +
                 '}';
     }
 }
