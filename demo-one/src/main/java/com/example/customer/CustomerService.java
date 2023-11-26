@@ -21,7 +21,7 @@ public class CustomerService {
         return customerDao.selectAllCustomers();
     }
 
-    public Customer getCustomer(Integer id) {
+    public Customer getCustomer(Long id) {
         return customerDao.selectCustomerById(id)
                 .orElseThrow(() -> new ResourceNotFound(
                         "Customer with id [%s] not found!".formatted(id)
@@ -37,6 +37,7 @@ public class CustomerService {
         Customer customer = new Customer();
         customer.setName(customerRegistrationRequest.name());
         customer.setEmail(customerRegistrationRequest.email());
+        customer.setAge(customerRegistrationRequest.age());
 
         try {
             return customerDao.insertCustomer(customer);
@@ -45,7 +46,7 @@ public class CustomerService {
         }
     }
 
-    public void deleteCustomer(Integer customerId) {
+    public void deleteCustomer(Long customerId) {
         Optional<Customer> customer = customerDao.selectCustomerById(customerId);
         if (customer.isEmpty()) {
             throw new ResourceNotFound("Customer with id [%s] not found".formatted(customerId));
@@ -58,7 +59,7 @@ public class CustomerService {
         }
     }
 
-    public void updateCustomer(Integer id, CustomerUpdateRequest customerUpdateRequest) {
+    public void updateCustomer(Long id, CustomerUpdateRequest customerUpdateRequest) {
         Customer customer = getCustomer(id);
 
         boolean changes = false;
@@ -75,6 +76,11 @@ public class CustomerService {
                 );
             }
             customer.setEmail(customerUpdateRequest.email());
+            changes = true;
+        }
+
+        if (customerUpdateRequest.age() != null && !customerUpdateRequest.age().equals(customer.getAge())) {
+            customer.setAge(customerUpdateRequest.age());
             changes = true;
         }
 
