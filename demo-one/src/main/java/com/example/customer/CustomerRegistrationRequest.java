@@ -2,5 +2,6 @@ package com.example.customer;
 
 public record CustomerRegistrationRequest(
         String name,
-        String email
+        String email,
+        Integer age
 ) {}

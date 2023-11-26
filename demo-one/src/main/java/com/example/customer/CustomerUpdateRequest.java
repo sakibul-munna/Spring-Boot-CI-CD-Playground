@@ -2,5 +2,6 @@ package com.example.customer;
 
 public record CustomerUpdateRequest(
         String name,
-        String email
+        String email,
+        Integer age
 ) {}
