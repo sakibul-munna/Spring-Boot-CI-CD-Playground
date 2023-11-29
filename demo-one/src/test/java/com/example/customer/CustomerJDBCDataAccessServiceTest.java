@@ -18,8 +18,8 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainers {
     @BeforeEach
     void setUp() {
         underTest = new CustomerJDBCDataAccessService(
-            getJdbcTemplate(),
-            customerRowMapper
+                getJdbcTemplate(),
+                customerRowMapper
         );
     }
 
@@ -65,7 +65,7 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainers {
     }
 
     @Test
-    void willReturnEmptyWhenSelectCustomerByIdGotInvalidId(){
+    void willReturnEmptyWhenSelectCustomerByIdGotInvalidId() {
         Long id = -1L;
 
         var actual = underTest.selectCustomerById(id);
@@ -74,12 +74,32 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainers {
     }
 
     @Test
-    void insertCustomer() {
+    void existsCustomerWithEmail() {
+        String email = FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID();
+        Customer customer = new Customer(
+                FAKER.name().fullName(),
+                email,
+                20
+        );
+        underTest.insertCustomer(customer);
 
+        boolean actual = underTest.existsCustomerWithEmail(email);
+
+        assertThat(actual).isTrue();
     }
 
     @Test
-    void existsCustomerWithEmail() {
+    void existsCustomerWithEmailReturnsFalseWhenDoesNotExist() {
+        String email = FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID();
+
+        boolean actual = underTest.existsCustomerWithEmail(email);
+
+        assertThat(actual).isFalse();
+    }
+
+    @Test
+    void insertCustomer() {
+
     }
 
     @Test
