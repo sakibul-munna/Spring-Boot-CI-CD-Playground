@@ -2,6 +2,8 @@ package com.example.customer;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(
         name = "customer",
@@ -90,4 +92,21 @@ public class Customer {
                 ", age='" + age + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return age == customer.age &&
+                id.equals(customer.id) &&
+                name.equals(customer.name) &&
+                email.equals(customer.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, email, age);
+    }
+
 }
