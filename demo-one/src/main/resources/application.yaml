@@ -1,5 +1,4 @@
 server:
-  port: 9090
   error:
     include-message: always
 
@@ -18,3 +17,13 @@ spring:
     show-sql: true
   flyway:
     baseline-on-migrate: true
+
+logging:
+  file:
+    name: demo-app.log
+  level:
+    org:
+      springframework:
+        web: INFO
+    com:
+      example: DEBUG
