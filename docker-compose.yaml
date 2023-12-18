@@ -13,6 +13,7 @@ services:
     networks:
       - db
     restart: unless-stopped
+
   demo-one:
     container_name: demo-one
     image: 170042060/demo-one
