@@ -80,7 +80,6 @@ public class Customer {
     }
 
     public Customer() {
-
     }
 
     @Override
