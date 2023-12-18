@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "demo-one",
+      "image": "170042060/demo-one:latest",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "containerPort": 8080
+        }
+      ],
+      "environment": [
+        {
+          "name": "SPRING_DATASOURCE_URL",
+          "value": "jdbc:postgresql://demo-one-db.cpw6yyzak7hh.ap-south-1.rds.amazonaws.com:5432/demo_one"
+        },
+        {
+          "name": "SPRING_DATASOURCE_PASSWORD",
+          "value": "00012000"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "demo-one-api-logs",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "awslogs-example"
+        }
+      }
+    }
+  ]
+}
