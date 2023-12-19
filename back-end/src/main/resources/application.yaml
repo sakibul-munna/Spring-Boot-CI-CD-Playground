@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/amigosecode
+    url: jdbc:postgresql://localhost:5432/block_craft
     username: root
     password: root
   jpa:

@@ -20,7 +20,7 @@ public class Customer {
     @SequenceGenerator(
             name = "customer_id_seq",
             sequenceName = "customer_id_seq",
-            allocationSize= 1
+            allocationSize = 1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id_seq")
     private Long id;
@@ -80,7 +80,6 @@ public class Customer {
     }
 
     public Customer() {
-
     }
 
     @Override
@@ -98,7 +97,7 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return age == customer.age &&
+        return Objects.equals(age, customer.age) &&
                 id.equals(customer.id) &&
                 name.equals(customer.name) &&
                 email.equals(customer.email);
