@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - backend/**
+      - back-end/**
   pull_request:
     branches: [ "main" ]
     paths:
-      - backend/**
+      - back-end/**
 
 jobs:
   build:
@@ -31,7 +31,7 @@ jobs:
           --health-retries 5
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./back-end
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
