@@ -1,22 +1,27 @@
 name: CI - Build Backend
 
 on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - backend/**
   pull_request:
-    branches:
-      - "main"
+    branches: [ "main" ]
     paths:
       - backend/**
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     services:
       postgres:
         image: postgres:16.1
         env:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: root
-          POSTGRES_DB: customer
+          POSTGRES_DB: block_craft
         ports:
           - 5432:5432
         options: >-
@@ -35,4 +40,4 @@ jobs:
           java-version: '21'
           cache: 'maven'
       - name: Build and run Unit/Integration Tests with Maven
-        run: mvn -ntp -B verify
+        run: mvn -B verify --file pom.xml
