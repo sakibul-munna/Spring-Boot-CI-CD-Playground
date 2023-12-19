@@ -41,3 +41,6 @@ jobs:
           cache: 'maven'
       - name: Build and run Unit/Integration Tests with Maven
         run: mvn clean verify
+      - name: Build Docker Image (optional)
+        if: ${{ runner.os == 'Linux' }}
+        run: docker build -no-cache
