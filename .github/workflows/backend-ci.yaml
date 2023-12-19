@@ -40,4 +40,4 @@ jobs:
           java-version: '21'
           cache: 'maven'
       - name: Build and run Unit/Integration Tests with Maven
-        run: mvn -B verify
+        run: mvn clean verify
