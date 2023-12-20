@@ -1,6 +1,6 @@
-package com.example.customer;
+package com.blockcraft.customer;
 
-import com.example.AbstractTestcontainers;
+import com.blockcraft.AbstractTestcontainers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.example.customer;
+package com.blockcraft.customer;
 
 import jakarta.persistence.*;
 

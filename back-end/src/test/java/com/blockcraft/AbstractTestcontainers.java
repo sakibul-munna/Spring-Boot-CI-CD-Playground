@@ -1,4 +1,4 @@
-package com.example;
+package com.blockcraft;
 
 import com.github.javafaker.Faker;
 import org.flywaydb.core.Flyway;

@@ -1,8 +1,8 @@
-package com.example.journey;
+package com.blockcraft.journey;
 
-import com.example.customer.Customer;
-import com.example.customer.CustomerRegistrationRequest;
-import com.example.customer.CustomerUpdateRequest;
+import com.blockcraft.customer.Customer;
+import com.blockcraft.customer.CustomerRegistrationRequest;
+import com.blockcraft.customer.CustomerUpdateRequest;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import org.junit.jupiter.api.Test;

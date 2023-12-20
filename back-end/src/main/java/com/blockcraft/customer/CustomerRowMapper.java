@@ -1,4 +1,4 @@
-package com.example.customer;
+package com.blockcraft.customer;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;

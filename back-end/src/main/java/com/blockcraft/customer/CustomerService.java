@@ -1,8 +1,8 @@
-package com.example.customer;
+package com.blockcraft.customer;
 
-import com.example.exception.DuplicateResourceException;
-import com.example.exception.RequestValidationException;
-import com.example.exception.ResourceNotFound;
+import com.blockcraft.exception.DuplicateResourceException;
+import com.blockcraft.exception.RequestValidationException;
+import com.blockcraft.exception.ResourceNotFound;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

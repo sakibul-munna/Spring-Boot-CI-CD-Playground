@@ -1,4 +1,4 @@
-package com.example;
+package com.blockcraft;
 
 import org.junit.jupiter.api.Test;
 import org.testcontainers.junit.jupiter.Testcontainers;
