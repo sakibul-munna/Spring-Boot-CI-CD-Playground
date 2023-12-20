@@ -39,5 +39,7 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
           cache: 'maven'
+      - name: Grant execute permissions to Maven Wrapper
+        run: chmod +x mvnw
       - name: Build and run Unit/Integration Tests with Maven
-        run: ./mvnw clean verify -Ptest -DskipDockerBuild=true
+        run: ./mvnw clean verify -DskipDockerBuild=true
