@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository("list")
-public class CustomerListDataAccessService implements CustomerDao{
+public class CustomerListDataAccessService implements CustomerDao {
     static List<Customer> customers = new ArrayList<>();
 
     static {
@@ -18,7 +18,7 @@ public class CustomerListDataAccessService implements CustomerDao{
                 22
         );
 
-        Customer jamila = new Customer(2L, "Jamila" , "jamila@gmail.com", 25);
+        Customer jamila = new Customer(2L, "Jamila", "jamila@gmail.com", 25);
 
         customers.add(alex);
         customers.add(jamila);
