@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "demo-one",
-      "image": "170042060/demo-one:latest",
+      "image": "170042060/blockcraft-api:latest",
       "essential": true,
       "memory": 512,
       "portMappings": [
