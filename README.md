@@ -17,26 +17,26 @@ This is a proof of concept (POC) application. The goal is to create a CI/CD pipe
    ```bash
    git clone https://github.com/sakibul-munna/Spring-Boot-CI-CD-Playground.git
    ```
-2. **Navigating to the Back-end folder**
-   Remember to navigate to the back-end folder before running any maven or spring boot related commands.
+2. **Navigating to the Back-end folder:**
    ```bash
    cd back-end
    ```
-3. ** Run Only The Unit Tests **
+   N.B.: Navigate to the back-end folder before running maven or spring boot related commands.
+4. **Run Only The Unit Tests:**
    ```bash
    cd back-end
    mvn test
    ```
-4. ** Run Only The Integration Tests **
+5. **Run Only The Integration Tests:**
    ```bash
    cd back-end
    mvn verify
    ```
-3. ** Build docker image and pushing it to Docker Hub **
-   As I used JIB plugin in the pom.xml file, JIB will automatically build and push the docker image. I have also configured that ```mvn package``` or ```./mvnw package``` command will build and push the docker image through JIB.
+3. **Build docker image and push it to Docker Hub:**
+   As I used the JIB plugin in the pom.xml file, JIB will automatically build and push the docker image. I have also configured that the ```mvn package``` or ```./mvnw package``` command will build and push the docker image through JIB.
 
 ## File and Folder Structure
-- The main purpose of _docker-compose.yaml_ file is to run Postgres db. But it also has sufficient commands to pull the latest image of this application and run it.
+- The primary purpose of _docker-compose.yaml_ file is to run Postgres db. But it also has sufficient commands to pull the latest image of this application and run it.
 - The _.github/workflows_ directory contains all the workflows related to CI/CD pipeline. 
 - The _back-end_ folder contains main spring boot application. The structure inside this _back-end_ folder is like a typical Spring Boot application.
 
