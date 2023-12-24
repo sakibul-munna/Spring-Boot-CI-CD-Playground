@@ -6,3 +6,8 @@
 
 # Build files
 build/
+
+# Spring Boot
+*.log
+log/
+logs/
