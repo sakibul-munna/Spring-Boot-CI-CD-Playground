@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.blockcraft</groupId>
-    <artifactId>blockcraft</artifactId>
+    <artifactId>back-end</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <name>BlockCraft</name>

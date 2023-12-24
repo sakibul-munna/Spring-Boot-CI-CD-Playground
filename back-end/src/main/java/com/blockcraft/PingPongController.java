@@ -3,13 +3,14 @@ package com.blockcraft;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/api/dummy")
 public class PingPongController {
 
-    record PingPong(String result){}
+    record PingPong(String result) {
+    }
 
     @GetMapping("/ping")
-    public PingPong getPingPong(){
+    public PingPong getPingPong() {
         return new PingPong("CD Test Success!");
     }
 }
