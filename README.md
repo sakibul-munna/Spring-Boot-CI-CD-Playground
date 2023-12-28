@@ -22,18 +22,29 @@ This is a proof of concept (POC) application. The goal is to create a CI/CD pipe
    cd back-end
    ```
    N.B.: Navigate to the back-end folder before running maven or spring boot related commands.
-4. **Run Only The Unit Tests:**
+3. **Run Only The Unit Tests:**
    ```bash
    cd back-end
    mvn test
    ```
-5. **Run Only The Integration Tests:**
+4. **Run Only The Integration Tests:**
    ```bash
    cd back-end
    mvn verify
    ```
-3. **Build docker image and push it to Docker Hub:**
-   As I used the JIB plugin in the pom.xml file, JIB will automatically build and push the docker image. I have also configured that the ```mvn package``` or ```./mvnw package``` command will build and push the docker image through JIB.
+5. **Build docker image for the first time and push it to Docker Hub:**
+   ```bash
+   cd back-end
+   mvn compile jib:build -Ddocker.image.tag=$(date '+%d.%m.%Y.%H.%M.%S')
+   ```
+   I am using the [JIB Maven Plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#quickstart) to build the docker image and push it to Docker Hub. So the given commands will create the image with current timestamp and will push it to Docker Hub.
+6. **Build docker image after first time and push it to Docker Hub:**
+   ```bash
+   cd back-end
+   mvn package
+   ```
+   In the JIB plugin configuration in the pom.xml file I have already configured that the ```mvn package``` or ```./mvnw package``` command will build and push the docker image through JIB. **_Note_**: _```mvn package``` command will run the integration tests first and then it will build the app._
+
 
 ## File and Folder Structure
 - The primary purpose of _docker-compose.yaml_ file is to run Postgres db. But it also has sufficient commands to pull the latest image of this application and run it.
