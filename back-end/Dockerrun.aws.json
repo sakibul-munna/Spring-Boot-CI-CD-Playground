@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "demo-one",
-      "image": "170042060/springbootcicdplayground-api:24.12.2023.04.39.28",
+      "image": "170042060/springbootcicdplayground-api:31.12.2023.04.32.14",
       "essential": true,
       "memory": 512,
       "portMappings": [
