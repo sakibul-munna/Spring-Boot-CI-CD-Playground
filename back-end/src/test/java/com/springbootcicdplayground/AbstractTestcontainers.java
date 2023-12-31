@@ -1,4 +1,4 @@
-package com.blockcraft;
+package com.springbootcicdplayground;
 
 import com.github.javafaker.Faker;
 import org.flywaydb.core.Flyway;

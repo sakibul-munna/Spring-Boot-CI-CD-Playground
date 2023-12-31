@@ -50,7 +50,7 @@ jobs:
         run: |
           echo "Dockerrun.aws.json before updating tag:"
           cat Dockerrun.aws.json
-          sed -i -E 's_(170042060/blockcraft-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' Dockerrun.aws.json
+          sed -i -E 's_(170042060/springbootcicdplayground-api:)([^"]*)_\1'${{steps.build-number.outputs.BUILD_NUMBER}}'_' Dockerrun.aws.json
           echo "Dockerrun.aws.json after updating tag:"
           cat Dockerrun.aws.json
       - name: Deploy to EB
