@@ -8,17 +8,17 @@
         <version>3.1.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.blockcraft</groupId>
+    <groupId>com.spring-boot-ci-cd-playground</groupId>
     <artifactId>back-end</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <name>BlockCraft</name>
-    <description>A full-stack application integrating Spring Boot and React for creative development and collaboration.</description>
+    <name>spring-boot-ci-cd-playground</name>
+    <description>A POC (playground) application to integrate CI/CD with GitHub and GitLab</description>
     <properties>
         <java.version>21</java.version>
         <skipDockerBuild>false</skipDockerBuild>
         <docker.username>170042060</docker.username>
-        <docker.image.name>blockcraft-api</docker.image.name>
+        <docker.image.name>springbootcicdplayground-api</docker.image.name>
         <docker.image.tag/>
     </properties>
 

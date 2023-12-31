@@ -1,8 +1,8 @@
-package com.blockcraft.customer;
+package com.springbootcicdplayground.customer;
 
-import com.blockcraft.exception.DuplicateResourceException;
-import com.blockcraft.exception.RequestValidationException;
-import com.blockcraft.exception.ResourceNotFound;
+import com.springbootcicdplayground.exception.DuplicateResourceException;
+import com.springbootcicdplayground.exception.RequestValidationException;
+import com.springbootcicdplayground.exception.ResourceNotFound;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

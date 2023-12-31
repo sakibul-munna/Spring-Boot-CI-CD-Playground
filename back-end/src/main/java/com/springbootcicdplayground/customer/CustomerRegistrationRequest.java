@@ -1,4 +1,4 @@
-package com.blockcraft.customer;
+package com.springbootcicdplayground.customer;
 
 public record CustomerRegistrationRequest(
         String name,

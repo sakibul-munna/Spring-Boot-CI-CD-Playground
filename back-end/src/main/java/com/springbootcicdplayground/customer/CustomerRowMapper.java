@@ -1,4 +1,4 @@
-package com.blockcraft.customer;
+package com.springbootcicdplayground.customer;
 
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;

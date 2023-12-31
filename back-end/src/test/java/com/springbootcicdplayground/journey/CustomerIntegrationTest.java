@@ -1,8 +1,8 @@
-package com.blockcraft.journey;
+package com.springbootcicdplayground.journey;
 
-import com.blockcraft.customer.Customer;
-import com.blockcraft.customer.CustomerRegistrationRequest;
-import com.blockcraft.customer.CustomerUpdateRequest;
+import com.springbootcicdplayground.customer.Customer;
+import com.springbootcicdplayground.customer.CustomerRegistrationRequest;
+import com.springbootcicdplayground.customer.CustomerUpdateRequest;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import org.junit.jupiter.api.Test;

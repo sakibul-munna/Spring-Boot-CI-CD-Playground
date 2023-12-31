@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "demo-one",
-      "image": "170042060/blockcraft-api:24.12.2023.10.15.21",
+      "image": "170042060/springbootcicdplayground-api:24.12.2023.04.39.28",
       "essential": true,
       "memory": 512,
       "portMappings": [

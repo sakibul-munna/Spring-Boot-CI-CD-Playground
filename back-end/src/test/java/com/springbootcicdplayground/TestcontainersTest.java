@@ -1,4 +1,4 @@
-package com.blockcraft;
+package com.springbootcicdplayground;
 
 import org.junit.jupiter.api.Test;
 import org.testcontainers.junit.jupiter.Testcontainers;

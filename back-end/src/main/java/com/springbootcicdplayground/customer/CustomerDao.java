@@ -1,4 +1,4 @@
-package com.blockcraft.customer;
+package com.springbootcicdplayground.customer;
 
 import java.util.List;
 import java.util.Optional;

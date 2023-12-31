@@ -1,4 +1,4 @@
-package com.blockcraft;
+package com.springbootcicdplayground;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,5 +14,10 @@ public class PingPongController {
     @GetMapping("/ping")
     public PingPong getPingPong() {
         return new PingPong("CD Test Success!");
+    }
+
+    @GetMapping("/rename-working")
+    public String getRenameWorking() {
+        return "Rename Done!";
     }
 }
